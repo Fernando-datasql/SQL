@@ -1,0 +1,26 @@
+--Create a clothing store database.
+
+CREATE TABLE Zeref (id INTEGER PRIMARY KEY, clothing TEXT, price INTEGER, stock INTEGER, color TEXT, size TEXT);
+
+INSERT INTO Zeref VALUES 
+(1,"shirt", 12.99, 43, "red","medium"),
+(2,"pants", 20.99, 20, "blue", "small"),
+(3,"hoodie", 25.99, 37, "black", "large"),
+(4,"zip-up jacket", 28.99, 12, "white", "medium"),
+(5,"underwear", 15.99, 50, "rainbow", "all sizes"),
+(6, "socks", 10.99, 100, "black", "all sizes"),
+(7, "hoodies", 15.99, 8, "rainbow", "all sizes"),
+(8, "thermals", 23.99, 14, "black", "x-large"),
+(9, "long sleeves", 18.99, 35, "white", "medium"),
+(10, "hats",21.99, 7, "rainbow", "all sizes"),
+(11, "shoes", 40.99, 41, "rainbow", "all sizes"),
+(12, "sandals", 15.99, 14, "brown", "all sizes"),
+(13, "bras", 30.99, 29, "rainbow", "all sizes"),
+(14, "shorts", 20.99, 15, "rainbow", "small"),
+(15, "pajamas", 19.99, 17, "black", "all sizes");
+
+--Display the database and order it by price.
+SELECT * FROM zeref ORDER BY price;
+
+--What is the average cost of all the clothing?
+SELECT AVG(price) FROM Zeref;
