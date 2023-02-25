@@ -1,3 +1,5 @@
+--Create a table and use advanced SELECT queries to discover things about the data!
+
 CREATE TABLE solar_system_objects(
   body TEXT
 , mean_radius NUMERIC         /* km */
@@ -47,17 +49,23 @@ INSERT INTO solar_system_objects(body,mean_radius,mean_radius_rel,volume,volume_
 
 SELECT * FROM solar_system_objects;
 
+--What are average, max, and min values in the data?
+
 SELECT avg(volume), max(volume), min(volume) FROM solar_system_objects;
 
 SELECT avg(density), max(density), min(density) FROM solar_system_objects;
 
 SELECT avg(mass), max(mass), min(mass) FROM solar_system_objects;
 
+--What about those numbers per category in the data?
+
 SELECT body,mass AS mass FROM solar_system_objects GROUP BY BODY HAVING "mass" > 500 ORDER BY mass desc;
 
 SELECT body, volume as volume FROM solar_system_objects GROUP BY BODY HAVING "VOLUME" > 1000 ORDER BY volume desc;
 
 SELECT body,density as density FROM solar_system_objects GROUP BY BODY HAVING "DENSITY" > 3 ORDER BY density desc;
+
+--What ways are there to group the data values that don’t exist yet?
 
 SELECT COUNT(*),
  CASE 
@@ -68,6 +76,8 @@ SELECT COUNT(*),
   End as "shapes"
  FROM solar_system_objects GROUP BY "shapes" 
  ORDER BY COUNT(*) desc;
+ 
+ --What interesting ways are there to filter the data?
  
  SELECT body FROM solar_system_objects WHERE mean_radius < 3000 AND type_of_object LIKE "%planet%";
  
