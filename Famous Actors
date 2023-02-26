@@ -1,0 +1,50 @@
+--Create tables involving actor, the movies they played in, and make pairs if they have a spouse.
+
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT INTO actors VALUES 
+    (1, "Chris Evans", 41),
+    (2, "Ryan Gosling",42),
+    (3,"Eva Mendes", 48),
+    (4, "Elsa Pataky", 46),
+    (5, "Chris Hemsworth", 39),
+    (6, "Tom Hiddleston", 42);
+
+CREATE TABLE movies(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    person_id INTEGER);
+
+INSERT INTO movies VALUES
+    (1, "Captain America", 1),
+    (2, "Avengers", 1),
+    (3, "Snowpiercer", 1),
+    (4, "Blade Runner 2049", 2),
+    (5, "The Nice Guys", 2),
+    (6, "Drive", 2),
+    (7, "Lost River", 3),
+    (8, "2 Fast 2 Furious", 3),
+    (9, "Fast Five", 3),
+    (10, "Poker Face", 4),
+    (11, "Fast Five",4),
+    (12, "Interceptor", 4),
+    (13, "Thor Ragnarok", 5),
+    (14, "Avengers", 5),
+    (15, "Extraction",5),
+    (16,"Avengers",6),
+    (17,"Kong: Skull Island",6),
+    (18, "War Horse", 6);
+    
+CREATE TABLE spouse (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person1_id INTEGER,
+    person2_id INTEGER);
+
+INSERT INTO spouse VALUES
+    (1, 2, 3),
+    (2, 4, 5);
+    
+    
