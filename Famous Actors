@@ -47,4 +47,17 @@ INSERT INTO spouse VALUES
     (1, 2, 3),
     (2, 4, 5);
     
+--Show what movies each actor was in.    
+
+SELECT actors.fullname, movies.name FROM actors
+ JOIN movies
+ ON actors.id = movies.person_id;
+
+--Who is married to each other?
+
+SELECT a.fullname, b.fullname FROM spouse
+JOIN actors a
+ON spouse.person1_id=a.id
+JOIN actors b
+ON spouse.person2_id= b.id;
     
